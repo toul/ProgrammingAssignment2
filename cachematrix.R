@@ -1,3 +1,6 @@
+##  Acknowledgment: Code modelled after "Caching the Mean of a Vector" Example -
+##  https://www.coursera.org/course/rprog
+
 ##  MakeCacheMatrix
 ##  Creates a special vector (list) containing functions which:
 ##      1.set the value of a square matrix
