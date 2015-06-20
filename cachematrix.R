@@ -9,7 +9,7 @@ makeCacheMatrix <- function(x = matrix()) {
     # When makeCacheMatrix is called, 'x' contains the original matrix and its 
     # inverse matrix 'Inv_m' is set to NULL (it has not yet been calculated).
     Inv_m <- NULL
-  
+    
     set_m <- function(y) {
         # Re-assign matrix 'x' with the values of matrix 'y' and clear the cache.
         # Since 'x' and 'Inv_m' were declared in the parent environment of this function, you
@@ -31,7 +31,7 @@ makeCacheMatrix <- function(x = matrix()) {
         # Return the cached inverse matrix, whether it is NULL or not.
         Inv_m
     }
-  
+    
     # Create and return a list of the above functions
     list(set_m = set_m, get_m = get_m,
          setInv_m = setInv_m,
@@ -52,8 +52,11 @@ cacheSolve <- function(x = matrix(), ...) {
     i_m <- x$getInv_m()
     
     # Return the cached inverse matrix if it is not NULL
-    if(!is.null(i_m)) return(i_m)
-
+    if(!is.null(i_m)) {
+        message ("retrieved cached data")
+        return(i_m)
+    } 
+    
     # Since the cached inverse matrix is NULL, we must retrieve the original matrix,
     # and then calculate, cache and return its inverse.
     data <- x$get_m()
