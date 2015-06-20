@@ -117,3 +117,4 @@ m_list$getInv_m()
 # Reset the orginal matrix to a 4 by 4 and calculate its inverse
 m_list <- makeCacheMatrix(matrix(c(9,1,3,6,13,11,7,0,5,7,4,7,2,6,1,10), nrow=4, ncol=4))
 cacheSolve(m_list)
+
